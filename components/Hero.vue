@@ -1,35 +1,43 @@
 <template>
   <div class="hero-content">
-    <div class="profile-image">
-      <img src="/img.jpeg" alt="Luis Alberto Urrea" @error="handleImageError" />
+    <div class="hero-badge">
+      <span>Disponible para proyectos</span>
     </div>
-    <div class="hero-badge">Disponible para proyectos</div>
-    <h1>
-      Hola, soy <span class="gradient">Luis Urrea</span><br />
-      Desarrollador Full Stack
+    
+    <h1 class="hero-title">
+      <span class="line"><span>Hola, soy</span></span>
+      <span class="line"><span class="gradient">Luis Urrea</span></span>
     </h1>
-    <p class="hero-subtitle">
-      <i class="fas fa-code"></i>
+    
+    <div class="hero-subtitle">
+      <span>Desarrollador Full Stack</span>
+      <span class="dot"></span>
       <span>Ingeniero Multimedia</span>
-    </p>
+    </div>
+    
     <p class="hero-description">
-      Estudiante de Ingenieria Multimedia en la UNAD y Analisis y Desarrollo de Software en el SENA. 
-      Creo soluciones digitales innovadoras combinando desarrollo web y multimedia.
+      Estudiante apasionado del SENA e Ingeniero Multimedia de la UNAD. 
+      Creo soluciones digitales inovadoras combinando desarrollo web y multimedia.
     </p>
-    <div class="hero-cta">
+    
+    <div class="hero-buttons">
       <a href="#proyectos" class="btn btn-primary">
-        <i class="fas fa-folder-open"></i> Ver Proyectos
+        Ver Proyectos <i class="fas fa-arrow-right"></i>
       </a>
       <NuxtLink to="/contacto" class="btn btn-secondary">
-        <i class="fas fa-envelope"></i> Contactar
+        Contactar <i class="fas fa-envelope"></i>
       </NuxtLink>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-function handleImageError(e: Event) {
-  const img = e.target as HTMLImageElement
-  img.src = 'https://ui-avatars.com/api/?name=Luis+Urrea&background=3b82f6&color=fff&size=200'
+<style scoped>
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
 }
-</script>
+</style>

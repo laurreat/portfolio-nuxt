@@ -1,12 +1,18 @@
 <template>
   <div>
     <section id="inicio" class="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient hero-gradient-1"></div>
+        <div class="hero-gradient hero-gradient-2"></div>
+        <div class="hero-gradient hero-gradient-3"></div>
+        <div class="hero-grid"></div>
+      </div>
       <div class="container">
         <Hero />
       </div>
     </section>
 
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Sobre Mi</span>
@@ -18,7 +24,7 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-text">
+          <div class="about-text reveal">
             <h3>Mi Trayectoria</h3>
             <p>
               Estudiante de <strong>Ingenieria Multimedia</strong> en la UNAD y 
@@ -31,7 +37,7 @@
               con un compromiso constante por aprender nuevas herramientas y metodologias.
             </p>
 
-            <div class="stats-row">
+            <div class="about-stats reveal">
               <div class="stat-box">
                 <div class="stat-number">15+</div>
                 <div class="stat-label">Proyectos</div>
@@ -47,13 +53,14 @@
             </div>
           </div>
 
-          <div class="about-image">
+          <div class="about-image reveal">
+            <div class="about-backdrop"></div>
             <img src="/img.jpeg" alt="Luis Urrea" @error="handleImageError" />
           </div>
         </div>
 
         <div class="specialties-grid">
-          <div class="specialty-card">
+          <div class="specialty-card reveal">
             <div class="specialty-icon">
               <i class="fas fa-code"></i>
             </div>
@@ -67,7 +74,7 @@
             </div>
           </div>
 
-          <div class="specialty-card">
+          <div class="specialty-card reveal">
             <div class="specialty-icon">
               <i class="fas fa-server"></i>
             </div>
@@ -81,7 +88,7 @@
             </div>
           </div>
 
-          <div class="specialty-card">
+          <div class="specialty-card reveal">
             <div class="specialty-icon">
               <i class="fas fa-gamepad"></i>
             </div>
@@ -94,7 +101,7 @@
             </div>
           </div>
 
-          <div class="specialty-card">
+          <div class="specialty-card reveal">
             <div class="specialty-icon">
               <i class="fas fa-shield-halved"></i>
             </div>
@@ -107,7 +114,7 @@
           </div>
         </div>
 
-        <div class="philosophy">
+        <div class="philosophy reveal">
           <h3><i class="fas fa-lightbulb"></i> Mi Filosofia</h3>
           <blockquote>
             "Para mi, programar no es solo escribir codigo, sino transformar ideas en soluciones 
@@ -135,7 +142,7 @@
       </div>
     </section>
 
-    <section id="habilidades">
+    <section id="habilidades" class="reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Habilidades</span>
@@ -143,7 +150,7 @@
         </div>
 
         <div class="skills-grid">
-          <div class="skill-category">
+          <div class="skill-category reveal">
             <h3><i class="fas fa-palette"></i> Frontend</h3>
             <div class="skill-list">
               <div class="skill-item">
@@ -165,7 +172,7 @@
             </div>
           </div>
 
-          <div class="skill-category">
+          <div class="skill-category reveal">
             <h3><i class="fas fa-database"></i> Backend</h3>
             <div class="skill-list">
               <div class="skill-item">
@@ -187,7 +194,7 @@
             </div>
           </div>
 
-          <div class="skill-category">
+          <div class="skill-category reveal">
             <h3><i class="fas fa-tools"></i> Herramientas</h3>
             <div class="skill-list">
               <div class="skill-item">
@@ -212,7 +219,7 @@
       </div>
     </section>
 
-    <section id="proyectos">
+    <section id="proyectos" class="reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Proyectos</span>
@@ -225,10 +232,11 @@
             v-for="project in projects" 
             :key="project.id" 
             :project="project"
+            class="reveal"
           />
         </div>
 
-        <div class="projects-cta">
+        <div class="projects-cta reveal">
           <h3>Quieres ver mas proyectos?</h3>
           <p>Explora mi repositorio completo en GitHub</p>
           <a href="https://github.com/laurreat" target="_blank" class="btn btn-primary">
@@ -256,6 +264,6 @@ const { data: projects } = await useAsyncData('projects', async () => {
 
 function handleImageError(e: Event) {
   const img = e.target as HTMLImageElement
-  img.src = 'https://ui-avatars.com/api/?name=Luis+Urrea&background=3b82f6&color=fff&size=400'
+  img.src = 'https://ui-avatars.com/api/?name=Luis+Urrea&background=6366f1&color=fff&size=400'
 }
 </script>

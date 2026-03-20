@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="section-label">Contacto</span>
         <h2 class="section-title">Trabajemos Juntos</h2>
         <p class="section-desc">
@@ -10,7 +10,7 @@
       </div>
 
       <div class="contact-grid">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <h2>Informacion de Contacto</h2>
           <p>
             Estoy disponible para nuevos proyectos y colaboraciones. 
@@ -19,7 +19,7 @@
 
           <div class="contact-cards">
             <div class="contact-card">
-              <div class="contact-card-icon">
+              <div class="contact-icon">
                 <i class="fas fa-envelope"></i>
               </div>
               <div>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="contact-card">
-              <div class="contact-card-icon">
+              <div class="contact-icon">
                 <i class="fab fa-linkedin-in"></i>
               </div>
               <div>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="contact-card">
-              <div class="contact-card-icon">
+              <div class="contact-icon">
                 <i class="fab fa-github"></i>
               </div>
               <div>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="contact-card">
-              <div class="contact-card-icon">
+              <div class="contact-icon">
                 <i class="fas fa-location-dot"></i>
               </div>
               <div>
@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <div class="contact-form">
+        <div class="contact-form reveal">
           <div v-if="message" :class="['form-message', messageType]">
             <i :class="['fas', messageType === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle']"></i>
             {{ message }}
@@ -78,23 +78,17 @@
           <form @submit.prevent="submitForm">
             <div class="form-row">
               <div class="form-group">
-                <label for="name">
-                  <i class="fas fa-user"></i> Nombre
-                </label>
+                <label for="name">Nombre</label>
                 <input type="text" id="name" v-model="form.name" placeholder="Tu nombre" required class="form-input" />
               </div>
               <div class="form-group">
-                <label for="email">
-                  <i class="fas fa-envelope"></i> Email
-                </label>
+                <label for="email">Email</label>
                 <input type="email" id="email" v-model="form.email" placeholder="tu@email.com" required class="form-input" />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="project-type">
-                <i class="fas fa-briefcase"></i> Tipo de Proyecto
-              </label>
+              <label for="project-type">Tipo de Proyecto</label>
               <select id="project-type" v-model="form.project_type" class="form-input">
                 <option value="">Selecciona el tipo</option>
                 <option value="web-app">Aplicacion Web</option>
@@ -106,9 +100,7 @@
             </div>
 
             <div class="form-group">
-              <label for="message">
-                <i class="fas fa-message"></i> Mensaje
-              </label>
+              <label for="message">Mensaje</label>
               <textarea id="message" v-model="form.message" placeholder="Describe tu proyecto..." required class="form-input"></textarea>
             </div>
 
