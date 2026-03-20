@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="app">
     <canvas id="particles" ref="particlesCanvas"></canvas>
     <Header />
-    <NuxtPage />
+    <main>
+      <NuxtPage />
+    </main>
     <Footer />
   </div>
 </template>
@@ -24,24 +26,23 @@ function initParticles() {
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
 
-  const particles: { x: number; y: number; vx: number; vy: number; size: number; opacity: number }[] = []
-  const particleCount = 80
+  const particles: { x: number; y: number; vx: number; vy: number; size: number }[] = []
+  const particleCount = 50
 
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      size: Math.random() * 2 + 1,
-      opacity: Math.random() * 0.5 + 0.2
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 1.5 + 0.5
     })
   }
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     
-    particles.forEach((p, i) => {
+    particles.forEach((p) => {
       p.x += p.vx
       p.y += p.vy
 
@@ -50,23 +51,8 @@ function initParticles() {
 
       ctx.beginPath()
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(0, 212, 255, ${p.opacity})`
+      ctx.fillStyle = 'rgba(59, 130, 246, 0.3)'
       ctx.fill()
-
-      particles.forEach((p2, j) => {
-        if (i === j) return
-        const dx = p.x - p2.x
-        const dy = p.y - p2.y
-        const dist = Math.sqrt(dx * dx + dy * dy)
-
-        if (dist < 150) {
-          ctx.beginPath()
-          ctx.moveTo(p.x, p.y)
-          ctx.lineTo(p2.x, p2.y)
-          ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - dist / 150)})`
-          ctx.stroke()
-        }
-      })
     })
 
     requestAnimationFrame(animate)
@@ -80,3 +66,10 @@ function initParticles() {
   })
 }
 </script>
+
+<style scoped>
+main {
+  position: relative;
+  z-index: 1;
+}
+</style>
