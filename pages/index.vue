@@ -3,7 +3,7 @@
     <section id="inicio" class="hero">
       <div class="hero-content">
         <div class="profile-image">
-          <img src="/img.jpeg" alt="Luis Alberto Urrea" @error="handleImageError" />
+          <img :src="profileImage" alt="Luis Alberto Urrea" @error="handleImageError" />
         </div>
         <h1 class="hero-title">¡Hola, soy Luis Alberto Urrea! 👋</h1>
         <p class="hero-subtitle">
@@ -55,7 +55,7 @@
           </div>
           <div class="about-image-container">
             <div class="about-image-wrapper">
-              <img src="/img.jpeg" alt="Luis Alberto Urrea - Developer" class="about-image" @error="handleImageError" />
+              <img :src="profileImage" alt="Luis Alberto Urrea - Developer" class="about-image" @error="handleImageError" />
               <div class="image-overlay"></div>
               <div class="floating-icons">
                 <i class="fab fa-js-square"></i>
@@ -198,6 +198,8 @@ const { data: projects, error } = await useAsyncData('projects', async () => {
     ]
   }
 })
+
+const profileImage = '/img.jpeg'
 
 function handleImageError(e: Event) {
   const img = e.target as HTMLImageElement
