@@ -55,7 +55,7 @@
 
           <div class="about-image reveal">
             <div class="about-backdrop"></div>
-            <img src="/img.jpeg" alt="Luis Urrea" @error="handleImageError" />
+            <img src="/brand/luKshaDEV_Banner_Perfil.png" alt="luKshaDEV" class="about-brand-img" />
           </div>
         </div>
 

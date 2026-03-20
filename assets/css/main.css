@@ -819,6 +819,16 @@ section {
   transform: scale(1.02);
 }
 
+.about-brand-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+  border: 2px solid var(--border);
+  transition: all 0.5s ease;
+  object-fit: contain;
+  background: transparent;
+}
+
 .about-image::before {
   content: '';
   position: absolute;

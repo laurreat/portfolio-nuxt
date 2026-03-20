@@ -4,9 +4,16 @@
       <span>Disponible para proyectos</span>
     </div>
     
+    <div class="hero-profile">
+      <div class="hero-image-container">
+        <img src="/brand/luKshaDEV_Banner_Perfil.png" alt="luKshaDEV Banner" class="hero-banner" />
+        <div class="hero-image-overlay"></div>
+      </div>
+    </div>
+    
     <h1 class="hero-title">
       <span class="line"><span>Hola, soy</span></span>
-      <span class="line"><span class="gradient">Luis Urrea</span></span>
+      <span class="line"><span class="gradient">luKshaDEV</span></span>
     </h1>
     
     <div class="hero-subtitle">
@@ -39,5 +46,32 @@
 <style scoped>
 .hero-title {
   font-family: 'Space Grotesk', sans-serif;
+}
+
+.hero-profile {
+  margin-bottom: 40px;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
+}
+
+.hero-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
 }
 </style>

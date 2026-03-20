@@ -2,7 +2,9 @@
   <header ref="header">
     <div class="nav-container">
       <div class="logo">
-        <NuxtLink to="/">Luis<span>Urrea</span></NuxtLink>
+        <NuxtLink to="/">
+          <img src="/brand/luKshaDEV_Logo_Perfil.png" alt="luKshaDEV" class="logo-img" />
+        </NuxtLink>
       </div>
       
       <nav class="nav-links" ref="navLinks">
@@ -49,3 +51,11 @@ onMounted(() => {
   })
 })
 </script>
+
+<style scoped>
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+</style>

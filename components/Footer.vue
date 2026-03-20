@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>Luis<span>Urrea</span></h3>
+          <img src="/brand/luKshaDEV_Logo_Perfil.png" alt="luKshaDEV" class="footer-logo" />
           <p>Desarrollador Full Stack & Ingeniero Multimedia. Creando soluciones digitales inovadoras.</p>
         </div>
         <div class="footer-links">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Luis Alberto Urrea. Todos los derechos reservados.</p>
+        <p>&copy; 2025 luKshaDEV. Todos los derechos reservados.</p>
         <p>Hecho con <i class="fas fa-heart"></i> y mucho codigo</p>
       </div>
     </div>
@@ -29,7 +29,9 @@
 </template>
 
 <style scoped>
-.footer-brand h3 span {
-  color: var(--accent);
+.footer-logo {
+  height: 50px;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
 }
 </style>
