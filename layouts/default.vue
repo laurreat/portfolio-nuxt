@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas ref="particlesCanvas"></canvas>
+    <canvas id="particles" ref="particlesCanvas"></canvas>
     <Header />
     <NuxtPage />
     <Footer />
